@@ -1,10 +1,12 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "type": "module",
   "description": "[![Actions Status](https://github.com/Rata0/typescript-project-81/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Rata0/typescript-project-81/actions)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "exec": "npx tsx ./src/index.ts",
     "build": "rm -rf ./dist && tsc",
     "lint": "npx eslint ."
   },
@@ -28,6 +30,7 @@
     "eslint": "^9.36.0",
     "globals": "^16.4.0",
     "jiti": "^2.6.0",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.1"
   }
