@@ -14,6 +14,10 @@ class FormBuilder {
     const fieldType = attributes.as || 'input'
     const { as: _, ...restAttributes } = attributes
 
+    const labelText = this.capitalizeFirstLetter(name)
+    const label = new Tag('label', { for: name }, labelText)
+    this.fields.push(label.toString())
+
     if (fieldType === 'textarea') {
       const defaultTextareaAttributes = {
         cols: '20',
@@ -38,8 +42,17 @@ class FormBuilder {
     }
   }
 
+  submit(buttonText = 'Save'): void {
+    const submitButton = new Tag('input', { type: 'submit', value: buttonText })
+    this.fields.push(submitButton.toString())
+  }
+
   getFields(): string[] {
     return this.fields
+  }
+
+  private capitalizeFirstLetter(word: string): string {
+    return word.charAt(0).toUpperCase() + word.slice(1)
   }
 }
 
