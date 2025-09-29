@@ -8,8 +8,8 @@ class HexletCode {
     callback: (form: FormBuilder) => void,
   ): string {
     const formAttributes: Record<string, string> = {
-      action: attributes.url || '#',
       method: attributes.method || 'post',
+      action: attributes.url || '#',
     }
 
     const formBuilder = new FormBuilder(template)
