@@ -51,4 +51,26 @@ describe('generate form', () => {
     const expected = readFixture('form4.expected.html')
     expect(form.trim()).toBe(expected)
   })
+
+  test('form with default submit', () => {
+    const form = HexletCode.formFor(template, { method: 'post' }, (f) => {
+      f.input('name')
+      f.input('job')
+      f.submit()
+    })
+
+    const expected = readFixture('form5.expected.html')
+    expect(form.trim()).toBe(expected)
+  })
+
+  test('form with custom submit value', () => {
+    const form = HexletCode.formFor(template, { method: 'post' }, (f) => {
+      f.input('name')
+      f.input('job')
+      f.submit('Super!')
+    })
+
+    const expected = readFixture('form6.expected.html')
+    expect(form.trim()).toBe(expected)
+  })
 })
