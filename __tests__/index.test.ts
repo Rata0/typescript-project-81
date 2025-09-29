@@ -27,7 +27,7 @@ describe('generate form', () => {
 
   test('form with custom attributes', () => {
     const form = HexletCode.formFor(template, {}, (f) => {
-      f.input('name', {class: 'user-input'})
+      f.input('name', { class: 'user-input' })
       f.input('job')
     })
 
@@ -36,7 +36,7 @@ describe('generate form', () => {
   })
 
   test('form with textarea custom size', () => {
-    const form = HexletCode.formFor(template, { url: '#' }, (f) => f.input('job', { as: 'textarea', rows: 50, cols: 50}))
+    const form = HexletCode.formFor(template, { url: '#' }, (f) => f.input('job', { as: 'textarea', rows: 50, cols: 50 }))
 
     const expected = readFixture('form3.expected.html')
     expect(form.trim()).toBe(expected)
