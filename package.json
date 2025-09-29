@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/Rata0/typescript-project-81/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Rata0/typescript-project-81/actions)",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
     "exec": "npx tsx ./src/index.ts",
     "build": "rm -rf ./dist && tsc",
