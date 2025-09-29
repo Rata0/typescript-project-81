@@ -15,9 +15,9 @@ class HexletCode {
     const formBuilder = new FormBuilder(template)
     callback(formBuilder)
     const fields = formBuilder.getFields()
-    const content = fields.join('\n    ')
+    const content = fields.join('')
 
-    const from = new Tag('form', formAttributes, `\n    ${content}\n`)
+    const from = new Tag('form', formAttributes, content)
     return from.toString()
   }
 }
