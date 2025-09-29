@@ -18,7 +18,7 @@ class Tag {
 
   formatAttributes(): string {
     const attributes = Object.entries(this.attributes)
-      .map(([key, value]) => ` ${key}="${value}"`)
+      .map(([key, value]) => ` ${key}='${value}'`)
       .join('')
 
     return attributes
