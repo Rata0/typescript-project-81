@@ -2,7 +2,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'url'
 import fs from 'fs'
 import { expect, test, describe } from 'vitest'
-import HexletCode from "../src/form/HexletCode"
+import HexletCode from '../src/form/HexletCode'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -36,7 +36,7 @@ describe('generate form', () => {
   })
 
   test('form with textarea custom size', () => {
-    const form = HexletCode.formFor(template, { url: '#' }, (f) => f.input('job', { as: 'textarea', rows: 50, cols: 50 }))
+    const form = HexletCode.formFor(template, { url: '#' }, f => f.input('job', { as: 'textarea', rows: 50, cols: 50 }))
 
     const expected = readFixture('form3.expected.html')
     expect(form.trim()).toBe(expected)
