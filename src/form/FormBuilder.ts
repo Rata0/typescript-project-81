@@ -12,11 +12,26 @@ class FormBuilder {
 
     const value = String(this.template[name])
     const fieldType = attributes.as || 'input'
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { as: _, ...restAttributes } = attributes
 
-    const labelText = this.capitalizeFirstLetter(name)
-    const label = new Tag('label', { for: name }, labelText)
+    const {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      as: _,
+      label: customLabelText,
+      labelHtml: labelAttributes,
+      ...fieldAttributes
+    } = attributes
+
+    const labelText = customLabelText ? String(customLabelText) : this.capitalizeFirstLetter(name)
+
+    const labelAttrs: Record<string, string> = { for: name }
+
+    if (labelAttributes && typeof labelAttributes === 'object') {
+      Object.entries(labelAttributes).forEach(([key, value]) => {
+        labelAttrs[key] = String(value)
+      })
+    }
+
+    const label = new Tag('label', labelAttrs, labelText)
     this.fields.push(label.toString())
 
     if (fieldType === 'textarea') {
@@ -26,7 +41,7 @@ class FormBuilder {
         name,
       }
 
-      const finalAttributes = { ...defaultTextareaAttributes, ...restAttributes }
+      const finalAttributes = { ...defaultTextareaAttributes, ...fieldAttributes }
       const textarea = new Tag('textarea', finalAttributes, value)
       this.fields.push(textarea.toString())
     }
@@ -37,7 +52,7 @@ class FormBuilder {
         value,
       }
 
-      const finalAttributes = { ...defaultInputAttributes, ...restAttributes }
+      const finalAttributes = { ...defaultInputAttributes, ...fieldAttributes }
       const input = new Tag('input', finalAttributes)
       this.fields.push(input.toString())
     }
