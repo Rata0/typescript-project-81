@@ -14,7 +14,7 @@ export default [
     ],
   },
   {
-    ignores: ['dist/'],
+    ignores: ['dist/', '__tests__', 'eslint.config.ts'],
   },
   {
     languageOptions: {

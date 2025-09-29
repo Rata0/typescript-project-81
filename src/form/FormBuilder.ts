@@ -12,6 +12,7 @@ class FormBuilder {
 
     const value = String(this.template[name])
     const fieldType = attributes.as || 'input'
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { as: _, ...restAttributes } = attributes
 
     const labelText = this.capitalizeFirstLetter(name)
