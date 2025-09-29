@@ -32,8 +32,8 @@ class FormBuilder {
     }
     else {
       const defaultInputAttributes = {
-        type: 'text',
         name,
+        type: 'text',
         value,
       }
 
