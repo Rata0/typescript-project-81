@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import HexletCode from "../src/form"
+import HexletCode from "../src/form/form"
 
 test('form Generator', () => {
   const template = { name: 'rob', job: 'hexlet', gender: 'm' };

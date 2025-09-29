@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import Tag from "../src/tag"
+import Tag from "../src/tags/tag"
 
 test('creates self-closing br tag', () => {
   const tag = new Tag("br")

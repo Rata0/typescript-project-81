@@ -1,3 +1,5 @@
+import { Tag } from '../tags'
+
 class HexletCode {
   static formFor(
     template: Record<string, unknown>,
@@ -9,13 +11,9 @@ class HexletCode {
       method: attributes.method || 'post',
     }
 
-    const formattedAttributes = Object.entries(formAttributes)
-      .map(([key, value]) => ` ${key}="${value}"`)
-      .join('')
+    const from = new Tag('form', formAttributes)
 
-    const from = `<form${formattedAttributes}></form>`
-
-    return from
+    return from.toString()
   }
 }
 
