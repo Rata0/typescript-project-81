@@ -1,5 +1,5 @@
 import { Tag } from '../tags'
-import FormBuilder from './formBuilder'
+import FormBuilder from './FormBuilder'
 
 class HexletCode {
   static formFor(

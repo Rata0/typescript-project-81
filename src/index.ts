@@ -1,3 +1,3 @@
-import HexletCode from './form/form'
+import HexletCode from './form/HexletCode'
 
 export default HexletCode

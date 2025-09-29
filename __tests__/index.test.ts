@@ -2,7 +2,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'url'
 import fs from 'fs'
 import { expect, test, describe } from 'vitest'
-import HexletCode from "../src/form/form"
+import HexletCode from "../src/form/HexletCode"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)

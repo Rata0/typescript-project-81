@@ -1,1 +1,1 @@
-export { default as HexletCode } from './form'
+export { default as HexletCode } from './HexletCode'
